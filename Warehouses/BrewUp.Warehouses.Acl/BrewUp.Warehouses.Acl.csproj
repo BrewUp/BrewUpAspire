@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Muflone" Version="8.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BrewUp.Warehouses.ReadModel\BrewUp.Warehouses.ReadModel.csproj" />
+      <ProjectReference Include="..\BrewUp.Warehouses.SharedKernel\BrewUp.Warehouses.SharedKernel.csproj" />
+      <ProjectReference Include="..\BrewUp.Warehouses.Shared\BrewUp.Warehouses.Shared.csproj" />
+    </ItemGroup>
+
+</Project>
