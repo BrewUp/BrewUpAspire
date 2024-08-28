@@ -9,9 +9,10 @@ public static class SalesHelper
 	public static IServiceCollection AddSalesModule(this IServiceCollection services, AppConfiguration configuration)
 	{
 		services.AddScoped<ISalesService, SalesService>();
-		var httpClientBuilder = services.AddHttpClient<SalesClient>(client =>
+		services.AddHttpClient<SalesClient>(client =>
 		{
 			client.BaseAddress = new Uri(configuration.BrewUpSalesUri);
+			//client.BaseAddress = new Uri("https://brewup-sales");
 			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 		});
 
