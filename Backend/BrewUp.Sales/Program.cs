@@ -1,4 +1,3 @@
-using BrewUp.Sales.Helpers;
 using BrewUp.Sales.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +14,7 @@ app.MapDefaultEndpoints();
 app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
-app.UseSalesFailureMiddleware();
+//app.UseSalesFailureMiddleware();
 
 // Register endpoints
 app.MapEndpoints();
