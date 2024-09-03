@@ -2,10 +2,14 @@ using BrewUp.Sales.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 // Register Modules
 builder.RegisterModules();
 
 var app = builder.Build();
+
+app.MapDefaultEndpoints();
 
 app.UseCors("CorsPolicy");
 

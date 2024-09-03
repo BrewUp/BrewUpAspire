@@ -6,11 +6,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAspireHost>true</IsAspireHost>
-    <UserSecretsId>a7efe7d9-3715-4f9b-a2cf-661ba0a25350</UserSecretsId>
+    <UserSecretsId>cb0b70d2-a6df-4d76-88bd-82e954211123</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Backend\BrewUp.Sales\BrewUp.Sales.csproj" />
   </ItemGroup>
 
 </Project>
