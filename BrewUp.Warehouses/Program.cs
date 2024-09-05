@@ -1,25 +1,16 @@
-using BrewUp.Sales.Modules;
+using BrewUp.Warehouses.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.AddServiceDefaults();
-builder.AddAzureServiceBusClient("serviceBusConnection");
-
-builder.Services.AddProblemDetails();
 
 // Register Modules
 builder.RegisterModules();
 
 var app = builder.Build();
 
-app.UseExceptionHandler();
-
-app.MapDefaultEndpoints();
-
 app.UseCors("CorsPolicy");
 
-app.UseHttpsRedirection();
-//app.UseSalesFailureMiddleware();
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Register endpoints
 app.MapEndpoints();
@@ -31,7 +22,7 @@ app.UseSwagger(s =>
 });
 app.UseSwaggerUI(s =>
 {
-	s.SwaggerEndpoint("/documentation/v1/documentation.json", "BrewUp Sales Api");
+	s.SwaggerEndpoint("/documentation/v1/documentation.json", "BrewUp Warehouses Api");
 	s.RoutePrefix = "documentation";
 });
 

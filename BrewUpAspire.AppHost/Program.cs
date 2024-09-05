@@ -1,9 +1,12 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var salesApi = builder.AddProject<Projects.BrewUp_Sales>("brewup-sales");
+var brewUpSalesRest = builder.AddProject<Projects.BrewUp_Sales>("brewup-sales");
+var brewUpSalesDomain = builder.AddProject<Projects.BrewUp_Sales_Domain>("brewup-sales-domain");
+var brewUpSalesReadModel = builder.AddProject<Projects.BrewUp_Sales_ReadModel>("brewup-sales-readmodel");
 
-builder.AddProject<Projects.ResilienceBlazor>("brewapp")
-	.WithReference(salesApi)
-	.WithExternalHttpEndpoints();
+builder.AddProject<Projects.ResilienceBlazor>("brewUp-app")
+	.WithReference(brewUpSalesRest)
+	.WithReference(brewUpSalesDomain)
+	.WithReference(brewUpSalesReadModel);
 
-await builder.Build().RunAsync();
+builder.Build().Run();

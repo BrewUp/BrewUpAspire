@@ -2,24 +2,15 @@ using BrewUp.Sales.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddServiceDefaults();
-builder.AddAzureServiceBusClient("serviceBusConnection");
-
-builder.Services.AddProblemDetails();
-
 // Register Modules
 builder.RegisterModules();
 
 var app = builder.Build();
 
-app.UseExceptionHandler();
-
-app.MapDefaultEndpoints();
-
 app.UseCors("CorsPolicy");
 
-app.UseHttpsRedirection();
-//app.UseSalesFailureMiddleware();
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Register endpoints
 app.MapEndpoints();

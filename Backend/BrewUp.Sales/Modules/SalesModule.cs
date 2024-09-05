@@ -1,4 +1,7 @@
-﻿using BrewUp.Sales.Services;
+﻿using Azure.Messaging.ServiceBus;
+using BrewUp.Sales.Services;
+using BrewUp.Shared.Commands;
+using System.Text.Json;
 
 namespace BrewUp.Sales.Modules
 {
@@ -16,11 +19,16 @@ namespace BrewUp.Sales.Modules
 
 		public IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints)
 		{
-			endpoints.MapGet("/sales", GetSaleOrdersAsync)
+			var salesGroup = endpoints.MapGroup("sales")
+				.WithTags("Sales");
+
+			salesGroup.MapGet("", GetSaleOrdersAsync)
 				.Produces(StatusCodes.Status202Accepted)
 				.ProducesValidationProblem()
 				.WithName("GetSaleOrders")
 				.WithTags("Sales");
+
+			salesGroup.MapPost("", HandleCreateSalesOrderAsync);
 
 			return endpoints;
 		}
@@ -29,6 +37,33 @@ namespace BrewUp.Sales.Modules
 		{
 			var salesOrder = await salesService.GetSaleOrdersAsync();
 			return Results.Ok(salesOrder);
+		}
+
+		private static async Task<IResult> HandleCreateSalesOrderAsync(ServiceBusClient serviceBusClient)
+		{
+			var sender = serviceBusClient.CreateSender("createsalesorder");
+
+			// Create a command
+			CreateSalesOrder command = new(Guid.NewGuid().ToString(), GetSalesOrderNumber(), DateTime.UtcNow, GetSalesOrderTotalAmount());
+
+			await sender.SendMessageAsync(new ServiceBusMessage(JsonSerializer.Serialize(command)), CancellationToken.None);
+
+			Console.WriteLine($"SalesOrder number {command.OrderNumber} has been sent");
+
+			return Results.Accepted();
+		}
+
+		private static string GetSalesOrderNumber()
+		{
+			var reference = DateTime.UtcNow;
+			return
+				$"{reference.Year:0000}{reference.Month:00}{reference.Day:00}-{reference.Hour:00}{reference.Minute:00}";
+		}
+
+		private static decimal GetSalesOrderTotalAmount()
+		{
+			var random = new Random(200);
+			return random.Next(1000, 10000);
 		}
 	}
 }

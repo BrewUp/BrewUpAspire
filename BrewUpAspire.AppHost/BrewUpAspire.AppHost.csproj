@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAspireHost>true</IsAspireHost>
-    <UserSecretsId>25699b7e-15b2-4606-9f38-51b2e75b6867</UserSecretsId>
+    <UserSecretsId>cf17e740-304b-4ce8-8a96-2f0a7c001898</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Backend\BrewUp.Sales.Domain\BrewUp.Sales.Domain.csproj" />
+    <ProjectReference Include="..\Backend\BrewUp.Sales.ReadModel\BrewUp.Sales.ReadModel.csproj" />
     <ProjectReference Include="..\Backend\BrewUp.Sales\BrewUp.Sales.csproj" />
     <ProjectReference Include="..\Frontend\ResilienceBlazor\ResilienceBlazor.csproj" />
   </ItemGroup>

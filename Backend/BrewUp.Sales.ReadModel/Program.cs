@@ -1,4 +1,4 @@
-using BrewUp.MessagesProcessor;
+using BrewUp.Sales.ReadModel;
 
 var builder = Host.CreateApplicationBuilder(args);
 

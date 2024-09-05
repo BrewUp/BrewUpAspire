@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Backend/BrewUp.Sales.Domain/appsettings.Development.json
+/Backend/BrewUp.Sales.ReadModel/appsettings.Development.json
+/Backend/BrewUp.Sales/appsettings.Development.json

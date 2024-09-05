@@ -1,11 +1,10 @@
 using Azure.Messaging.ServiceBus;
-using BrewUp.Shared.Commands;
 using BrewUp.Shared.Events;
 using System.Text.Json;
 
-namespace BrewUp.Sales.Domain;
+namespace BrewUp.Sales.ReadModel;
 
-public sealed class Worker(ILogger<Worker> logger,
+public class Worker(ILogger<Worker> logger,
 	ServiceBusClient serviceBusClient) : BackgroundService
 {
 	protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -13,12 +12,12 @@ public sealed class Worker(ILogger<Worker> logger,
 		while (!stoppingToken.IsCancellationRequested)
 		{
 			var processor = serviceBusClient.CreateProcessor(
-				"createsalesorder",
-				"",
+				"salesordercreated",
+				"sales",
 				new ServiceBusProcessorOptions());
 
 			// Add handler to process messages
-			processor.ProcessMessageAsync += CreateSalesOrderCommandHandler;
+			processor.ProcessMessageAsync += SalesOrderCreatedEventHandler;
 
 			// Add handler to process any errors
 			processor.ProcessErrorAsync += ErrorHandler;
@@ -27,15 +26,15 @@ public sealed class Worker(ILogger<Worker> logger,
 			await processor.StartProcessingAsync(stoppingToken);
 
 			logger.LogInformation("""
-                                  Wait for a minute and then press any key to end the processing
-                                  """);
+			                      Wait for a minute and then press any key to end the processing
+			                      """);
 
 			Console.ReadKey();
 
 			// Stop processing
 			logger.LogInformation("""
-                                  Stopping the receiver...
-                                  """);
+			                      Stopping the receiver...
+			                      """);
 
 			await processor.StopProcessingAsync(stoppingToken);
 
@@ -43,14 +42,12 @@ public sealed class Worker(ILogger<Worker> logger,
 		}
 	}
 
-	private async Task CreateSalesOrderCommandHandler(ProcessMessageEventArgs args)
+	private async Task SalesOrderCreatedEventHandler(ProcessMessageEventArgs args)
 	{
 		var body = args.Message.Body.ToString();
-		var salesOrder = JsonSerializer.Deserialize<CreateSalesOrder>(body);
+		var salesOrder = JsonSerializer.Deserialize<SalesOrderCreated>(body);
 
 		logger.LogInformation($"SalesOrder Received: {salesOrder.OrderNumber} from subscription.", body);
-
-		await RaiseSalesOrderCreatedAsync(salesOrder);
 
 		// Complete the message. messages is deleted from the subscription.
 		await args.CompleteMessageAsync(args.Message);
@@ -62,14 +59,5 @@ public sealed class Worker(ILogger<Worker> logger,
 		logger.LogError(args.Exception, "{Error}", args.Exception.Message);
 
 		return Task.CompletedTask;
-	}
-
-	private async Task RaiseSalesOrderCreatedAsync(CreateSalesOrder salesOrder)
-	{
-		var sender = serviceBusClient.CreateSender("salesordercreated");
-
-		SalesOrderCreated domainEvent = new(salesOrder.OrderId, salesOrder.OrderNumber, salesOrder.OrderDate, salesOrder.TotalAmount);
-
-		await sender.SendMessageAsync(new ServiceBusMessage(JsonSerializer.Serialize(domainEvent)), CancellationToken.None);
 	}
 }
