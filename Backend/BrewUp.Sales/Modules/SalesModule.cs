@@ -1,6 +1,7 @@
 ﻿using Azure.Messaging.ServiceBus;
 using BrewUp.Sales.Services;
 using BrewUp.Shared.Commands;
+using BrewUp.Shared.Models;
 using System.Text.Json;
 
 namespace BrewUp.Sales.Modules
@@ -39,12 +40,17 @@ namespace BrewUp.Sales.Modules
 			return Results.Ok(salesOrder);
 		}
 
-		private static async Task<IResult> HandleCreateSalesOrderAsync(ServiceBusClient serviceBusClient)
+		private static async Task<IResult> HandleCreateSalesOrderAsync(
+			SalesOrder body,
+			ServiceBusClient serviceBusClient)
 		{
 			var sender = serviceBusClient.CreateSender("createsalesorder");
 
 			// Create a command
-			CreateSalesOrder command = new(Guid.NewGuid().ToString(), GetSalesOrderNumber(), DateTime.UtcNow, GetSalesOrderTotalAmount());
+			CreateSalesOrder command = new(body.OrderId.ToString(), GetSalesOrderNumber(),
+				body.CustomerId.ToString(), body.CustomerName,
+				DateTime.UtcNow,
+				GetSalesOrderTotalAmount(), "EUR");
 
 			await sender.SendMessageAsync(new ServiceBusMessage(JsonSerializer.Serialize(command)), CancellationToken.None);
 

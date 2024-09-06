@@ -11,15 +11,36 @@ public class SalesBase : ComponentBase, IDisposable
 	protected IQueryable<SalesOrder> SalesOrders { get; set; } = default!;
 	protected string ErrorMessage { get; set; } = string.Empty;
 
-	protected bool WaitErrorReset;
-	protected bool HideResponse = true;
-
-	protected int GoodResponses = 0;
-	protected int BadResponses = 0;
-
 	protected override async Task OnInitializedAsync()
 	{
 		await base.OnInitializedAsync();
+	}
+
+	protected async Task CreateSalesOrderAsync()
+	{
+		try
+		{
+			SalesOrder salesOrder = new(
+				Guid.NewGuid(),
+				Guid.NewGuid().ToString(),
+				Guid.NewGuid(),
+				"Il Grottino del Muflone",
+				0,
+				"EUR",
+				Enumerable.Empty<SalesRow>()
+			);
+			var result = await SalesService.CreateSalesOrderAsync(salesOrder, CancellationToken.None);
+
+			Thread.Sleep(500);
+
+			await GetSalesOrdersAsync();
+		}
+		catch (Exception ex)
+		{
+			ErrorMessage = ex.Message;
+		}
+
+		StateHasChanged();
 	}
 
 	protected async Task GetSalesOrdersAsync()
@@ -30,18 +51,11 @@ public class SalesBase : ComponentBase, IDisposable
 			SalesOrders = result.AsQueryable();
 
 			ErrorMessage = "Success";
-			HideResponse = true;
-
-			GoodResponses++;
 		}
 		catch (Exception ex)
 		{
 			SalesOrders = new List<SalesOrder>().AsQueryable();
 			ErrorMessage = ex.Message;
-			WaitErrorReset = true;
-			HideResponse = false;
-
-			BadResponses++;
 		}
 
 		StateHasChanged();

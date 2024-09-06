@@ -25,17 +25,10 @@ public class Worker(ILogger<Worker> logger,
 			// Start processing
 			await processor.StartProcessingAsync(stoppingToken);
 
-			logger.LogInformation("""
-			                      Wait for a minute and then press any key to end the processing
-			                      """);
-
-			Console.ReadKey();
+			// Wait for a minute and then press any key to end the processing
+			Thread.Sleep(60000);
 
 			// Stop processing
-			logger.LogInformation("""
-			                      Stopping the receiver...
-			                      """);
-
 			await processor.StopProcessingAsync(stoppingToken);
 
 			logger.LogInformation("Stopped receiving messages");
@@ -49,7 +42,7 @@ public class Worker(ILogger<Worker> logger,
 
 		logger.LogInformation($"SalesOrder Received: {salesOrder.OrderNumber} from subscription.", body);
 
-		// Complete the message. messages is deleted from the subscription.
+		// Complete the message. Message is deleted from the subscription.
 		await args.CompleteMessageAsync(args.Message);
 	}
 

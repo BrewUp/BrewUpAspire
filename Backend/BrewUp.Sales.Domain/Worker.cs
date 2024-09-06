@@ -20,22 +20,14 @@ public sealed class Worker(ILogger<Worker> logger,
 			// Add handler to process messages
 			processor.ProcessMessageAsync += CreateSalesOrderCommandHandler;
 
-			// Add handler to process any errors
+			//// Add handler to process any errors
 			processor.ProcessErrorAsync += ErrorHandler;
 
 			// Start processing
 			await processor.StartProcessingAsync(stoppingToken);
 
-			logger.LogInformation("""
-                                  Wait for a minute and then press any key to end the processing
-                                  """);
-
-			Console.ReadKey();
-
-			// Stop processing
-			logger.LogInformation("""
-                                  Stopping the receiver...
-                                  """);
+			// Wait for a minute and then press any key to end the processing
+			Thread.Sleep(60000);
 
 			await processor.StopProcessingAsync(stoppingToken);
 
@@ -68,7 +60,10 @@ public sealed class Worker(ILogger<Worker> logger,
 	{
 		var sender = serviceBusClient.CreateSender("salesordercreated");
 
-		SalesOrderCreated domainEvent = new(salesOrder.OrderId, salesOrder.OrderNumber, salesOrder.OrderDate, salesOrder.TotalAmount);
+		SalesOrderCreated domainEvent = new(salesOrder.OrderId, salesOrder.OrderNumber,
+			salesOrder.CustomerId, salesOrder.CustomerName,
+			salesOrder.OrderDate,
+			salesOrder.TotalAmount, salesOrder.Currency);
 
 		await sender.SendMessageAsync(new ServiceBusMessage(JsonSerializer.Serialize(domainEvent)), CancellationToken.None);
 	}
