@@ -2,7 +2,7 @@
 
 namespace BrewUp.Shared.InMemoryDb;
 
-public class Repository(ISalesOrderDatabase salesOrderDatabase)
+public class Repository(ISalesOrderDatabase salesOrderDatabase) : IRepository
 {
 	public void AddSalesOrder(SalesOrder salesOrder)
 	{

@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Backend\BrewUp.Sales.Domain\BrewUp.Sales.Domain.csproj" />
     <ProjectReference Include="..\Backend\BrewUp.Sales.ReadModel\BrewUp.Sales.ReadModel.csproj" />
     <ProjectReference Include="..\Backend\BrewUp.Sales\BrewUp.Sales.csproj" />
+    <ProjectReference Include="..\BrewUp.Shared\BrewUp.Shared.csproj" />
     <ProjectReference Include="..\Frontend\ResilienceBlazor\ResilienceBlazor.csproj" />
   </ItemGroup>
 

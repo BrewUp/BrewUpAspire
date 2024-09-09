@@ -40,7 +40,7 @@ public sealed class Worker(ILogger<Worker> logger,
 		var body = args.Message.Body.ToString();
 		var salesOrder = JsonSerializer.Deserialize<CreateSalesOrder>(body);
 
-		logger.LogInformation($"SalesOrder Received: {salesOrder.OrderNumber} from subscription.", body);
+		logger.LogInformation($"SalesOrder Received: {salesOrder!.OrderNumber} from subscription.", body);
 
 		await RaiseSalesOrderCreatedAsync(salesOrder);
 

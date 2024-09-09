@@ -3,7 +3,7 @@ using BrewUp.Sales.Modules;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-builder.AddAzureServiceBusClient("serviceBusConnection");
+builder.AddAzureServiceBusClient("ServiceBusConnection");
 
 builder.Services.AddProblemDetails();
 

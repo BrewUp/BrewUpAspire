@@ -1,11 +1,14 @@
 using Azure.Messaging.ServiceBus;
 using BrewUp.Shared.Events;
+using BrewUp.Shared.InMemoryDb;
+using BrewUp.Shared.Models;
 using System.Text.Json;
 
 namespace BrewUp.Sales.ReadModel;
 
 public class Worker(ILogger<Worker> logger,
-	ServiceBusClient serviceBusClient) : BackgroundService
+	ServiceBusClient serviceBusClient,
+	IRepository repository) : BackgroundService
 {
 	protected override async Task ExecuteAsync(CancellationToken stoppingToken)
 	{
@@ -38,9 +41,18 @@ public class Worker(ILogger<Worker> logger,
 	private async Task SalesOrderCreatedEventHandler(ProcessMessageEventArgs args)
 	{
 		var body = args.Message.Body.ToString();
-		var salesOrder = JsonSerializer.Deserialize<SalesOrderCreated>(body);
+		var salesOrderCreated = JsonSerializer.Deserialize<SalesOrderCreated>(body);
 
-		logger.LogInformation($"SalesOrder Received: {salesOrder.OrderNumber} from subscription.", body);
+		if (salesOrderCreated != null)
+		{
+			SalesOrder salesOrder = new(new Guid(salesOrderCreated.OrderId), salesOrderCreated.OrderNumber,
+				new Guid(salesOrderCreated.CustomerId), salesOrderCreated.CustomerName,
+				salesOrderCreated.TotalAmount, salesOrderCreated.Currency,
+				[]);
+			repository.AddSalesOrder(salesOrder);
+		}
+
+		logger.LogInformation($"SalesOrder Received: {salesOrderCreated!.OrderNumber} from subscription.", body);
 
 		// Complete the message. Message is deleted from the subscription.
 		await args.CompleteMessageAsync(args.Message);

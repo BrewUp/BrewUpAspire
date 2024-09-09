@@ -1,5 +1,6 @@
 ﻿using Azure.Messaging.ServiceBus;
 using BrewUp.Sales.Services;
+using BrewUp.Shared;
 using BrewUp.Shared.Commands;
 using BrewUp.Shared.Models;
 using System.Text.Json;
@@ -13,6 +14,8 @@ namespace BrewUp.Sales.Modules
 
 		public IServiceCollection RegisterModule(WebApplicationBuilder builder)
 		{
+			builder.Services.AddShared();
+			builder.Services.AddHostedService<SalesReadModelWorker>();
 			builder.Services.AddScoped<SalesService>();
 
 			return builder.Services;
@@ -46,11 +49,19 @@ namespace BrewUp.Sales.Modules
 		{
 			var sender = serviceBusClient.CreateSender("createsalesorder");
 
+			body = body with
+			{
+				OrderId = Guid.NewGuid(),
+				CustomerName = "Il Grottino del Muflone",
+				OrderNumber = GetSalesOrderNumber(),
+				TotalAmount = GetSalesOrderTotalAmount()
+			};
+
 			// Create a command
-			CreateSalesOrder command = new(body.OrderId.ToString(), GetSalesOrderNumber(),
+			CreateSalesOrder command = new(body.OrderId.ToString(), body.OrderNumber,
 				body.CustomerId.ToString(), body.CustomerName,
 				DateTime.UtcNow,
-				GetSalesOrderTotalAmount(), "EUR");
+				body.TotalAmount, "EUR");
 
 			await sender.SendMessageAsync(new ServiceBusMessage(JsonSerializer.Serialize(command)), CancellationToken.None);
 
@@ -63,7 +74,7 @@ namespace BrewUp.Sales.Modules
 		{
 			var reference = DateTime.UtcNow;
 			return
-				$"{reference.Year:0000}{reference.Month:00}{reference.Day:00}-{reference.Hour:00}{reference.Minute:00}";
+				$"{reference.Year:0000}{reference.Month:00}{reference.Day:00}-{reference.Hour:00}{reference.Minute:00}{reference.Second:00}";
 		}
 
 		private static decimal GetSalesOrderTotalAmount()
