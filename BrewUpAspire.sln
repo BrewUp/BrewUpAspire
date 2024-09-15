@@ -19,10 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResilienceBlazor.Modules.Sa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResilienceBlazor.Shared", "Frontend\ResilienceBlazor.Shared\ResilienceBlazor.Shared.csproj", "{A6B4055C-16A0-4D8E-8484-D4CF0FEC7B15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewUpAspire.AppHost", "BrewUpAspire.AppHost\BrewUpAspire.AppHost.csproj", "{1C6C2EFE-1285-4018-AF15-F650F6AC02B0}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrewUpAspire.ServiceDefaults", "BrewUpAspire.ServiceDefaults\BrewUpAspire.ServiceDefaults.csproj", "{32DF0A03-26F8-454C-B352-929F1A9945D5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,14 +49,6 @@ Global
 		{A6B4055C-16A0-4D8E-8484-D4CF0FEC7B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6B4055C-16A0-4D8E-8484-D4CF0FEC7B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6B4055C-16A0-4D8E-8484-D4CF0FEC7B15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C6C2EFE-1285-4018-AF15-F650F6AC02B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C6C2EFE-1285-4018-AF15-F650F6AC02B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C6C2EFE-1285-4018-AF15-F650F6AC02B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C6C2EFE-1285-4018-AF15-F650F6AC02B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32DF0A03-26F8-454C-B352-929F1A9945D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32DF0A03-26F8-454C-B352-929F1A9945D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32DF0A03-26F8-454C-B352-929F1A9945D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32DF0A03-26F8-454C-B352-929F1A9945D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

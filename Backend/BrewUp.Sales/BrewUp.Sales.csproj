@@ -26,7 +26,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\BrewUp.Shared\BrewUp.Shared.csproj" />
-	  <ProjectReference Include="..\..\BrewUpAspire.ServiceDefaults\BrewUpAspire.ServiceDefaults.csproj" />
 	</ItemGroup>
 
 </Project>
