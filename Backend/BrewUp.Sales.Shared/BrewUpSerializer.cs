@@ -15,6 +15,6 @@ public class BrewUpSerializer
     {
         cancellationToken.ThrowIfCancellationRequested();
         
-        return Task.FromResult(JsonConvert.SerializeObject(data));
+        return Task.FromResult(JsonConvert.SerializeObject((object)data));
     }
 }

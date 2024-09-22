@@ -1,16 +1,19 @@
 ﻿using Azure.Messaging.ServiceBus;
 using BrewUp.Sales.Shared;
 using BrewUp.Shared.Commands;
+using BrewUp.Shared.Events;
 
 namespace BrewUp.Sales.Domain;
 
 public class BrewUpConsumer
 {
     private readonly ServiceBusProcessor _processor;
-    private readonly BrewUpSerializer _serializer;
+    private readonly AzureEventBus _eventBus;
 
-    public BrewUpConsumer(AzureServiceBusConfiguration azureServiceBusConfiguration)
+    public BrewUpConsumer(AzureServiceBusConfiguration azureServiceBusConfiguration,
+        AzureEventBus eventBus)
     {
+        _eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
         var serviceBusClient = new ServiceBusClient(azureServiceBusConfiguration.ConnectionString);
         
         _processor = serviceBusClient.CreateProcessor(
@@ -44,7 +47,15 @@ public class BrewUpConsumer
 
     private async Task ConsumeAsync(CreateSalesOrder message, CancellationToken cancellationToken)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         
+        SalesOrderCreated @event = new(message.SalesOrderId, message.SalesOrderNumber,
+            message.CustomerId, message.CustomerName,
+            message.TotalAmount, message.Currency,
+            message.Rows);
+        
+        var serializedMessage = await BrewUpSerializer.SerializeAsync(@event, cancellationToken).ConfigureAwait(false);
+        await _eventBus.PublishAsync(serializedMessage).ConfigureAwait(false);
     }
     
     private Task ProcessErrorAsync(ProcessErrorEventArgs arg)=> Task.CompletedTask;

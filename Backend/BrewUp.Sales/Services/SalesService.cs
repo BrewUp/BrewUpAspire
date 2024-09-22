@@ -5,10 +5,9 @@ using BrewUp.Shared.Models;
 
 namespace BrewUp.Sales.Services;
 
-public class SalesService(AzureServiceBusConfiguration azureServiceBusConfiguration)
+public class SalesService(AzureServiceBusConfiguration azureServiceBusConfiguration,
+	AzureServiceBus serviceBus)
 {
-	private readonly AzureServiceBus _serviceBus = new(azureServiceBusConfiguration);
-
 	public async Task<IEnumerable<SalesOrder>> GetSaleOrdersAsync()
 	{
 		return await Task.FromResult(new List<SalesOrder>
@@ -59,7 +58,7 @@ public class SalesService(AzureServiceBusConfiguration azureServiceBusConfigurat
 			salesOrder.Rows);
 		
 		var command = await BrewUpSerializer.SerializeAsync(salesOrderCommand);
-		await _serviceBus.SendAsync(command).ConfigureAwait(false);
+		await serviceBus.SendAsync(command).ConfigureAwait(false);
 		
 		return await Task.FromResult(salesOrder.ToString());
 	}
