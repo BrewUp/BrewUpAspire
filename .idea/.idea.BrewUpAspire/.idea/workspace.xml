@@ -21,17 +21,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64e3d22e-d285-49ab-a9f0-2d4e0d94413e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/AzureServiceBusHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/Commands/CreateSalesOrderConsumer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/Events/SalesOrderCreatedConsumer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/BrewUp.Sales.Azure.Infrastructures.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Infrastructures/Azure/AzureServiceBusSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BrewUpAspire/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BrewUpAspire/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/BrewUp.Sales.Facade.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/BrewUp.Sales.Facade.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Endpoints/SalesEndpoints.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Validators/SalesOrderLineValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Validators/SalesOrderLineValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Validators/SalesOrderValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Validators/SalesOrderValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Validators/ValidationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Validators/ValidationHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/BrewUp.Sales.Rest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/BrewUp.Sales.Rest.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/SalesModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/SalesModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BrewUpAspire.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUpAspire.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +55,8 @@
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesFacade.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/RabbitMq/RabbitMqHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Runtime/ExceptionServices/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.DependencyInjection/src/ServiceLookup/CallSiteFactory.cs" root0="FORCE_HIGHLIGHTING" />
@@ -172,7 +171,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727103857667</updated>
-      <workItem from="1727103860016" duration="11078000" />
+      <workItem from="1727103860016" duration="11925000" />
     </task>
     <servers />
   </component>
@@ -241,26 +240,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/SalesOrderService.cs</url>
-          <line>19</line>
+          <line>15</line>
           <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.ReadModel\Services\SalesOrderService.cs" containingFunctionPresentation="Method 'CreateSalesOrderAsync'">
             <startOffsets>
-              <option value="686" />
+              <option value="637" />
             </startOffsets>
             <endOffsets>
-              <option value="712" />
+              <option value="663" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs</url>
-          <line>20</line>
+          <line>21</line>
           <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.Rest\Modules\InfrastructureModule.cs" containingFunctionPresentation="Method 'RegisterModule'">
             <startOffsets>
-              <option value="657" />
+              <option value="727" />
             </startOffsets>
             <endOffsets>
-              <option value="702" />
+              <option value="772" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />

@@ -1,7 +1,8 @@
 ﻿using BrewUp.Infrastructures;
 using BrewUp.Infrastructures.Azure;
 using BrewUp.Infrastructures.RabbitMq;
-using BrewUp.Sales.Facade;
+using BrewUp.Sales.Azure.Infrastructures.Azure;
+using BrewUp.Sales.Rmq.Infrastructures.RabbitMq;
 
 namespace BrewUp.Sales.Rest.Modules;
 
@@ -20,10 +21,10 @@ public sealed class InfrastructureModule : IModule
 
         builder.Services.AddInfrastructureServices();
         if (builder.Configuration["BrewUp:Broker"]!.Equals("RMQ"))
-            builder.Services.AddSalesRmqInfrastructure(rabbitMqSettings);
+            builder.Services.AddRabbitMqForSalesModule(rabbitMqSettings);
         
         if (builder.Configuration["BrewUp:Broker"]!.Equals("AzureServiceBus"))
-            builder.Services.AddSalesAzureInfrastructure(azureServiceBusSettings);
+            builder.Services.AddAzureServiceBusForSalesModule(azureServiceBusSettings);
         
         return builder.Services;
     }

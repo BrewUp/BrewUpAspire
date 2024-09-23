@@ -1,5 +1,14 @@
-﻿using BrewUp.Sales.Facade;
-using BrewUp.Sales.Facade.Endpoints;
+﻿using BrewUp.Sales.Messages.Commands;
+using BrewUp.Sales.ReadModel.Services;
+using BrewUp.Sales.Rest.Validators;
+using BrewUp.Sales.SharedKernel.DomainIds;
+using BrewUp.Sales.SharedKernel.Dtos;
+using BrewUp.Shared.CustomTypes;
+using BrewUp.Shared.DomainIds;
+using BrewUp.Shared.Models;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Muflone.Persistence;
 
 namespace BrewUp.Sales.Rest.Modules;
 
@@ -10,13 +19,53 @@ public sealed class SalesModule : IModule
     
     public IServiceCollection RegisterModule(WebApplicationBuilder builder)
     {
-        builder.Services.AddSales();
+        builder.Services.AddFluentValidationAutoValidation();
+        builder.Services.AddValidatorsFromAssemblyContaining<SalesOrderValidator>();
+        builder.Services.AddSingleton<ValidationHandler>();
+        
+        builder.Services.AddScoped<ISalesOrderService, SalesOrderService>();
 
         return builder.Services;
     }
 
     public IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints)
     {
-        return endpoints.MapSalesEndpoints();
+        var group = endpoints.MapGroup("/v1/sales/")
+            .WithTags("Sales");
+
+        group.MapPost("/", HandleCreateOrder)
+            .Produces(StatusCodes.Status400BadRequest)
+            .Produces(StatusCodes.Status201Created)
+            .WithName("CreateSalesOrder");
+        
+        return endpoints;
+    }
+    
+    private static async Task<IResult> HandleCreateOrder(
+        IValidator<SalesOrderJson> validator,
+        ValidationHandler validationHandler,
+        SalesOrderJson body,
+        IServiceBus serviceBus,
+        CancellationToken cancellationToken)
+    {
+        await validationHandler.ValidateAsync(validator, body);
+        if (!validationHandler.IsValid)
+            return Results.BadRequest(validationHandler.Errors);
+        
+        if (body.OrderId.Equals(Guid.Empty))
+            body = body with {OrderId = Guid.NewGuid()};
+       
+        CreateSalesOrder createSalesOrder = new(new SalesOrderId(body.OrderId),
+            new SalesOrderNumber(body.OrderNumber),
+            new CustomerId(body.CustomerId), new CustomerName(body.CustomerName), 
+            new OrderDate(DateTime.Today), 
+            body.Rows.Select(x => new SalesOrderRowDto(
+                new BeerId(x.BeerId), new BeerName(x.BeerName),
+                new Quantity(x.Quantity, "Lt"), 
+                new Price(10, "EUR"))));
+
+        await serviceBus.SendAsync(createSalesOrder, cancellationToken);
+
+        return Results.Created($"/v1/sales/orders/{body.OrderId}", body.OrderId);
     }
 }
