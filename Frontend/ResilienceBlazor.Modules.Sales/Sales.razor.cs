@@ -8,7 +8,7 @@ public class SalesBase : ComponentBase, IDisposable
 {
 	[Inject] private ISalesService SalesService { get; set; } = default!;
 
-	protected IQueryable<SalesOrder> SalesOrders { get; set; } = default!;
+	protected IQueryable<SalesOrderJson> SalesOrders { get; set; } = default!;
 	protected string ErrorMessage { get; set; } = string.Empty;
 
 	protected bool WaitErrorReset;
@@ -36,7 +36,7 @@ public class SalesBase : ComponentBase, IDisposable
 		}
 		catch (Exception ex)
 		{
-			SalesOrders = new List<SalesOrder>().AsQueryable();
+			SalesOrders = new List<SalesOrderJson>().AsQueryable();
 			ErrorMessage = ex.Message;
 			WaitErrorReset = true;
 			HideResponse = false;

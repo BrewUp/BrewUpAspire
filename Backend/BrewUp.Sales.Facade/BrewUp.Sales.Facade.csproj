@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Muflone" Version="8.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BrewUp.Infrastructures\BrewUp.Infrastructures.csproj" />
+    <ProjectReference Include="..\..\BrewUp.Shared\BrewUp.Shared.csproj" />
+    <ProjectReference Include="..\BrewUp.Sales.Rmq.Infrastructures\BrewUp.Sales.Rmq.Infrastructures.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BrewUp.Infrastructures">
+      <HintPath>..\BrewUp.Sales.Infrastructures\bin\Debug\net8.0\BrewUp.Infrastructures.dll</HintPath>
+    </Reference>
+    <Reference Include="BrewUp.Shared">
+      <HintPath>..\BrewUp.Sales.Infrastructures\bin\Debug\net8.0\BrewUp.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
