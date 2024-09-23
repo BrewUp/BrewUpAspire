@@ -21,7 +21,6 @@ public class SalesReadModelWorker(ILogger<SalesReadModelWorker> logger,
                 new ServiceBusProcessorOptions());
         // Add handler to process messages
         _processor.ProcessMessageAsync += SalesOrderCreatedEventHandler;
-
         // Add handler to process any errors
         _processor.ProcessErrorAsync += ErrorHandler;
 

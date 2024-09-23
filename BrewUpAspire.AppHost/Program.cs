@@ -9,4 +9,4 @@ var brewUpSalesRest = builder.AddProject<Projects.BrewUp_Sales>("brewup-sales")
 builder.AddProject<Projects.ResilienceBlazor>("brewUp-app")
 	.WithReference(brewUpSalesRest);
 
-builder.Build().Run();
+await builder.Build().RunAsync();

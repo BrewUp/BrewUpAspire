@@ -35,4 +35,4 @@ app.UseSwaggerUI(s =>
 	s.RoutePrefix = "documentation";
 });
 
-app.Run();
+await app.RunAsync();

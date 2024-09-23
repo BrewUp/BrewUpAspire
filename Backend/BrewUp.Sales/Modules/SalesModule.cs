@@ -80,7 +80,8 @@ namespace BrewUp.Sales.Modules
 		private static decimal GetSalesOrderTotalAmount()
 		{
 			var random = new Random(200);
-			return random.Next(1000, 10000);
+			var totalAmount = random.Next(1000, 10000);
+			return totalAmount + DateTime.UtcNow.Second;
 		}
 	}
 }
