@@ -30,7 +30,7 @@ public sealed class SalesModule : IModule
 
     public IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints)
     {
-        var group = endpoints.MapGroup("/v1/sales/")
+        var group = endpoints.MapGroup("/sales/")
             .WithTags("Sales");
 
         group.MapPost("/", HandleCreateOrder)
@@ -66,6 +66,6 @@ public sealed class SalesModule : IModule
 
         await serviceBus.SendAsync(createSalesOrder, cancellationToken);
 
-        return Results.Created($"/v1/sales/orders/{body.OrderId}", body.OrderId);
+        return Results.Created($"/sales/{body.OrderId}", body.OrderId);
     }
 }
