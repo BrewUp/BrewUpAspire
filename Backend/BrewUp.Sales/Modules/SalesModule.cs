@@ -1,5 +1,4 @@
 ﻿using BrewUp.Sales.Domain;
-using BrewUp.Sales.ReadModel;
 using BrewUp.Sales.Services;
 
 namespace BrewUp.Sales.Modules
@@ -12,11 +11,9 @@ namespace BrewUp.Sales.Modules
 		public IServiceCollection RegisterModule(WebApplicationBuilder builder)
 		{
 			AzureServiceBusConfiguration config = new (
-				"Endpoint=sb://brewupservicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=FNeEpKPd1C/CPYi/KmG1wfaeNPsIDhgxY+ASbINzYis=",
+				builder.Configuration["BrewUp:AzureServiceBus:ConnectionString"]!,
 				"createsalesorder", "sales");
 			builder.Services.AddScoped<SalesService>();
-			builder.Services.AddSalesDomain(config);
-			builder.Services.AddSalesReadModel(config);
 
 			return builder.Services;
 		}
