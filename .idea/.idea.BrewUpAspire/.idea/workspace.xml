@@ -21,92 +21,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64e3d22e-d285-49ab-a9f0-2d4e0d94413e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain.Tests/BrewUp.Sales.Domain.Tests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain.Tests/Entities/CreateSalesOrderSuccesfully.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain.Tests/GlobalUsings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/BrewUp.Sales.Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/CommandHandlers/CommandHandlerBaseAsync.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/CommandHandlers/CreateSalesOrderCommandHandlerAsync.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/Entities/SalesOrder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/Entities/SalesOrderLine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/Helpers/DomainHelpers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/BrewUp.Sales.Facade.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Endpoints/SalesEndpoints.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/ISalesFacade.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesFacade.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Validators/SalesOrderLineValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Validators/SalesOrderValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Validators/ValidationHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Messages/BrewUp.Sales.Messages.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Messages/Commands/CreateSalesOrder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Messages/Events/SalesOrderCreated.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/BrewUp.Sales.ReadModel.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/EventHandlers/DomainEventHandlerBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/EventHandlers/SalesOrderCreatedEventHandlerAsync.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/ISalesOrderService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/SalesOrderService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/ServiceBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/BrewUp.Sales.Rest.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Extensions/FeatureFlagsHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Extensions/HealthCheckHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Helpers/HealthCheckExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/AuthenticationModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/CorsModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/IModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/ModuleExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/SalesModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/SerilogModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/StatusModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/SwaggerModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/BrewUp.Sales.Rmq.Infrastructures.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/RabbitMq/Commands/CreateSalesOrderConsumer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/RabbitMq/Events/SalesOrderCreatedConsumer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/RabbitMq/RabbitMqHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.SharedKernel/BrewUp.Sales.SharedKernel.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.SharedKernel/DomainIds/SalesOrderId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.SharedKernel/Dtos/SalesOrderNumber.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.SharedKernel/Dtos/SalesOrderRowDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Infrastructures/BrewUp.Infrastructures.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Infrastructures/EventStore/InMemoryEventRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Infrastructures/InfrastructureHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Infrastructures/RabbitMq/RabbitMqSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Infrastructures/RepositoryListener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Shared/Enumeration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/AzureServiceBusHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/Commands/CreateSalesOrderConsumer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/Events/SalesOrderCreatedConsumer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/BrewUp.Sales.Azure.Infrastructures.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BrewUp.Infrastructures/Azure/AzureServiceBusSettings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BrewUpAspire/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BrewUpAspire/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Shared/AzureEventBus.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Shared/AzureServiceBus.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Shared/AzureServiceBusConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Shared/BrewUp.Sales.Shared.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Shared/BrewUpSerializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/BrewUp.Sales.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Helpers/HealthCheckExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Helpers/SalesFailureMiddleware.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Helpers/SalesFailureMiddlewareExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Modules/CorsModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Modules/IModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Modules/ModuleExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Modules/SalesModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Modules/SerilogModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Modules/StatusModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Modules/SwaggerModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/Services/SalesService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrewUp.Shared/BrewUp.Shared.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.Shared/BrewUp.Shared.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrewUp.Shared/Models/SalesOrder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/BrewUp.Sales.Facade.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/BrewUp.Sales.Facade.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BrewUpAspire.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUpAspire.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/ResilienceBlazor.Modules.Sales.Extensions/ISalesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/ResilienceBlazor.Modules.Sales.Extensions/ISalesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/ResilienceBlazor.Modules.Sales.Extensions/SalesClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/ResilienceBlazor.Modules.Sales.Extensions/SalesClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/ResilienceBlazor.Modules.Sales.Extensions/SalesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/ResilienceBlazor.Modules.Sales.Extensions/SalesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/ResilienceBlazor.Modules.Sales/Sales.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/ResilienceBlazor.Modules.Sales/Sales.razor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +64,10 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.DependencyInjection/src/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1bdfe83cd19a4bec9aad25922ccb7618ad1c0/35/d5331805/ServiceBusReceivedMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1bdfe83cd19a4bec9aad25922ccb7618ad1c0/3b/5c37fa29/MessageBody.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1bdfe83cd19a4bec9aad25922ccb7618ad1c0/57/eb7382f1/Argument.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1bdfe83cd19a4bec9aad25922ccb7618ad1c0/bc/5178fb90/AmqpMessageExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/22f3d967443141aa9e8a695f50de8337a800/07/efe38d00/AzureServiceBusConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/22f3d967443141aa9e8a695f50de8337a800/0e/e12b39bd/CommandConsumerBase`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/878a10ce70584191bb13e15eb8703b6c8e00/82/cdb53921/DomainEventsConsumerBase`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9eb5c0a57774455bace1438ebd67694ebe20/b7/963cb18b/AmqpMessageBody.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/621526284d3e4868b98948aff942206525763e57e194a27623b66c384466/ServiceProviderServiceExtensions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -243,7 +172,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727103857667</updated>
-      <workItem from="1727103860016" duration="9395000" />
+      <workItem from="1727103860016" duration="11078000" />
     </task>
     <servers />
   </component>
@@ -272,19 +201,6 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/CommandHandlers/CreateSalesOrderCommandHandlerAsync.cs</url>
-          <line>12</line>
-          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.Domain\CommandHandlers\CreateSalesOrderCommandHandlerAsync.cs" containingFunctionPresentation="Method 'ProcessCommand'">
-            <startOffsets>
-              <option value="506" />
-            </startOffsets>
-            <endOffsets>
-              <option value="686" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/EventHandlers/SalesOrderCreatedEventHandlerAsync.cs</url>
           <line>15</line>
           <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.ReadModel\EventHandlers\SalesOrderCreatedEventHandlerAsync.cs" containingFunctionPresentation="Method 'HandleAsync'">
@@ -295,20 +211,59 @@
               <option value="711" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BrewUp.Infrastructures/EventStore/InMemoryEventRepository.cs</url>
+          <line>50</line>
+          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\BrewUp.Infrastructures\EventStore\InMemoryEventRepository.cs" containingFunctionPresentation="Method 'SaveAsync'">
+            <startOffsets>
+              <option value="1592" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1622" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BrewUp.Infrastructures/RepositoryListener.cs</url>
-          <line>8</line>
-          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\BrewUp.Infrastructures\RepositoryListener.cs" containingFunctionPresentation="Constructor 'RepositoryListener'">
+          <line>22</line>
+          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\BrewUp.Infrastructures\RepositoryListener.cs" containingFunctionPresentation="Method 'EventsOnCollectionChanged'">
             <startOffsets>
-              <option value="210" />
+              <option value="678" />
             </startOffsets>
             <endOffsets>
-              <option value="248" />
+              <option value="711" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/SalesOrderService.cs</url>
+          <line>19</line>
+          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.ReadModel\Services\SalesOrderService.cs" containingFunctionPresentation="Method 'CreateSalesOrderAsync'">
+            <startOffsets>
+              <option value="686" />
+            </startOffsets>
+            <endOffsets>
+              <option value="712" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs</url>
+          <line>20</line>
+          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.Rest\Modules\InfrastructureModule.cs" containingFunctionPresentation="Method 'RegisterModule'">
+            <startOffsets>
+              <option value="657" />
+            </startOffsets>
+            <endOffsets>
+              <option value="702" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

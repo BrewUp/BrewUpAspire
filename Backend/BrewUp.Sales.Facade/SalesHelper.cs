@@ -1,4 +1,6 @@
-﻿using BrewUp.Infrastructures.RabbitMq;
+﻿using BrewUp.Infrastructures.Azure;
+using BrewUp.Infrastructures.RabbitMq;
+using BrewUp.Sales.Azure.Infrastructures.Azure;
 using BrewUp.Sales.Facade.Validators;
 using BrewUp.Sales.ReadModel.Services;
 using BrewUp.Sales.Rmq.Infrastructures.RabbitMq;
@@ -26,6 +28,14 @@ public static class SalesHelper
         RabbitMqSettings rabbitMqSettings)
     {
         services.AddRabbitMqForSalesModule(rabbitMqSettings);
+        
+        return services;
+    }
+    
+    public static IServiceCollection AddSalesAzureInfrastructure(this IServiceCollection services,
+        AzureServiceBusSettings azureServiceBusSettings)
+    {
+        services.AddAzureServiceBusForSalesModule(azureServiceBusSettings);
         
         return services;
     }

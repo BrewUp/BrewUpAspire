@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewUp.Sales.SharedKernel",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewUp.Infrastructures", "BrewUp.Infrastructures\BrewUp.Infrastructures.csproj", "{FFADEB81-1F05-4BCE-8FA4-B7D725082A91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewUp.Sales.Azure.Infrastructures", "Backend\BrewUp.Sales.Azure.Infrastructures\BrewUp.Sales.Azure.Infrastructures.csproj", "{6EC17FB9-F871-425B-A5FC-1944DFD770D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{FFADEB81-1F05-4BCE-8FA4-B7D725082A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFADEB81-1F05-4BCE-8FA4-B7D725082A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFADEB81-1F05-4BCE-8FA4-B7D725082A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC17FB9-F871-425B-A5FC-1944DFD770D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC17FB9-F871-425B-A5FC-1944DFD770D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC17FB9-F871-425B-A5FC-1944DFD770D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC17FB9-F871-425B-A5FC-1944DFD770D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{4EC0EE32-6D40-4F99-81A3-CC83A4AA9A50} = {6FA536DF-0550-4A99-8994-9BC6E578351F}
 		{6C729553-ABCA-406D-B711-0C1847C2A15A} = {6FA536DF-0550-4A99-8994-9BC6E578351F}
 		{15506822-29FD-4663-BB9B-3973DCC34A54} = {6FA536DF-0550-4A99-8994-9BC6E578351F}
+		{6EC17FB9-F871-425B-A5FC-1944DFD770D2} = {6FA536DF-0550-4A99-8994-9BC6E578351F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8FEA429-0100-4643-B6C8-9B2B38565452}

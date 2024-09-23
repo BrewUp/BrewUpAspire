@@ -6,12 +6,8 @@ using Microsoft.Extensions.Logging;
 
 namespace BrewUp.Sales.ReadModel.Services;
 
-public sealed class SalesOrderService : ServiceBase, ISalesOrderService
+public sealed class SalesOrderService(ILoggerFactory loggerFactory) : ServiceBase(loggerFactory), ISalesOrderService
 {
-    public SalesOrderService(ILoggerFactory loggerFactory) : base(loggerFactory)
-    {
-    }
-
     public Task CreateSalesOrderAsync(SalesOrderId salesOrderId, SalesOrderNumber salesOrderNumber, CustomerId customerId,
         CustomerName customerName, OrderDate orderDate, IEnumerable<SalesOrderRowDto> rows, CancellationToken cancellationToken)
     {
