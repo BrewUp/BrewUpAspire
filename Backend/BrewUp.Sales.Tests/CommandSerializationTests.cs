@@ -35,7 +35,7 @@ public class CommandSerializationTests
         var serializedCommand = await _serializer.SerializeAsync(salesOrderCommand);
         var deserializedCommand = await _serializer.DeserializeAsync<CreateSalesOrder>(serializedCommand);
         
-        Assert.True(salesOrderCommand.SalesOrderId == deserializedCommand.SalesOrderId);
+        Assert.True(salesOrderCommand.SalesOrderId == deserializedCommand!.SalesOrderId);
         Assert.True(salesOrderCommand.SalesOrderNumber == deserializedCommand.SalesOrderNumber);
         Assert.True(salesOrderCommand.CustomerId == deserializedCommand.CustomerId);
         Assert.True(salesOrderCommand.CustomerName == deserializedCommand.CustomerName);

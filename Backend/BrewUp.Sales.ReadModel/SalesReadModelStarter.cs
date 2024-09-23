@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Hosting;
 
-namespace BrewUp.Sales.Domain;
+namespace BrewUp.Sales.ReadModel;
 
-public class SalesDomainStarter(CreateSalesOrderConsumer consumer) : IHostedService
+public class SalesReadModelStarter(SalesOrderCreatedConsumer consumer) : IHostedService
 {
     public async Task StartAsync(CancellationToken cancellationToken)
     {

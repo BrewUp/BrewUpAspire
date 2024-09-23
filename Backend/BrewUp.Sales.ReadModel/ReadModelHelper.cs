@@ -1,19 +1,20 @@
+using BrewUp.Sales.Domain;
 using BrewUp.Sales.Shared;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BrewUp.Sales.Domain;
+namespace BrewUp.Sales.ReadModel;
 
-public static class DomainHelper
+public static class ReadModelHelper
 {
-    public static IServiceCollection AddSalesDomain(this IServiceCollection services,
+    public static IServiceCollection AddSalesReadModel(this IServiceCollection services,
         AzureServiceBusConfiguration azureServiceBusConfiguration)
     {
-        services.AddSingleton<CreateSalesOrderConsumer>();
+        services.AddSingleton<SalesOrderCreatedConsumer>();
         services.AddSingleton(new AzureServiceBus(azureServiceBusConfiguration));
         services.AddSingleton(new AzureEventBus(azureServiceBusConfiguration));
         services.AddSingleton(azureServiceBusConfiguration);
 
-        services.AddHostedService<SalesDomainStarter>();
+        services.AddHostedService<SalesReadModelStarter>();
         
         return services;
     }

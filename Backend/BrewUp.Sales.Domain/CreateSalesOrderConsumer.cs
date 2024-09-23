@@ -5,12 +5,12 @@ using BrewUp.Shared.Events;
 
 namespace BrewUp.Sales.Domain;
 
-public class BrewUpConsumer
+public class CreateSalesOrderConsumer
 {
     private readonly ServiceBusProcessor _processor;
     private readonly AzureEventBus _eventBus;
 
-    public BrewUpConsumer(AzureServiceBusConfiguration azureServiceBusConfiguration,
+    public CreateSalesOrderConsumer(AzureServiceBusConfiguration azureServiceBusConfiguration,
         AzureEventBus eventBus)
     {
         _eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
