@@ -20,10 +20,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb9a0543-0c41-4989-907e-cfcb58213407" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BrewUpAspire/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/CommandConsumerBase.cs" afterDir="false" />
-    </list>
+    <list default="true" id="cb9a0543-0c41-4989-907e-cfcb58213407" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
