@@ -54,4 +54,16 @@ public sealed class SalesOrder : AggregateRoot
         _status = Status.Created;
     }
     #endregion
+    
+    #region CloseOrder
+    internal void CloseOrder()
+    {
+        RaiseEvent(new SalesOrderClosed(new SalesOrderId(Guid.NewGuid())));
+    }
+
+    private void Apply(SalesOrderClosed @event)
+    {
+        _status = Status.Cancelled;
+    }
+    #endregion
 }

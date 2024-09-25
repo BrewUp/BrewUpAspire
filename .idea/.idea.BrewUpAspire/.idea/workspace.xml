@@ -8,6 +8,10 @@
     <projectFile profileName="IIS Express">Backend/BrewUp.Sales.Rest/BrewUp.Sales.Rest.csproj</projectFile>
     <projectFile profileName="BrewUp.Sales">Backend/BrewUp.Sales/BrewUp.Sales.csproj</projectFile>
     <projectFile profileName="IIS Express">Backend/BrewUp.Sales/BrewUp.Sales.csproj</projectFile>
+    <projectFile aspireProfileName="http">BrewUp.AppHost/BrewUp.AppHost.csproj</projectFile>
+    <projectFile aspireProfileName="https">BrewUp.AppHost/BrewUp.AppHost.csproj</projectFile>
+    <projectFile profileName="http">BrewUp.AppHost/BrewUp.AppHost.csproj</projectFile>
+    <projectFile profileName="https">BrewUp.AppHost/BrewUp.AppHost.csproj</projectFile>
     <projectFile aspireProfileName="http">BrewUpAspire.AppHost/BrewUpAspire.AppHost.csproj</projectFile>
     <projectFile aspireProfileName="https">BrewUpAspire.AppHost/BrewUpAspire.AppHost.csproj</projectFile>
     <projectFile profileName="http">BrewUpAspire.AppHost/BrewUpAspire.AppHost.csproj</projectFile>
@@ -21,15 +25,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64e3d22e-d285-49ab-a9f0-2d4e0d94413e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Endpoints/SalesEndpoints.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Validators/SalesOrderLineValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Validators/SalesOrderLineValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Validators/SalesOrderValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Validators/SalesOrderValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Validators/ValidationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Validators/ValidationHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/Commands/CloseSalesOrderConsumer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/Events/SalesOrderClosedConsumer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/CommandHandlers/CloseSalesOrderCommandHandlerAsync.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Messages/Commands/CloseSalesOrder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Messages/Events/SalesOrderClosed.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/EventHandlers/SalesOrderClosedEventHandlerAsync.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/RabbitMq/Commands/CloseSalesOrderConsumer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/RabbitMq/Events/SalesOrderClosedConsumer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BrewUpAspire/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BrewUpAspire/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/AzureServiceBusHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Azure.Infrastructures/Azure/AzureServiceBusHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/Entities/SalesOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/Entities/SalesOrder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/ISalesOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/ISalesOrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/SalesOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/SalesOrderService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/BrewUp.Sales.Rest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/BrewUp.Sales.Rest.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/SalesModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/SalesModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrewUpAspire.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUpAspire.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/RabbitMq/RabbitMqHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/RabbitMq/RabbitMqHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrewUp.AppHost/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.AppHost/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +70,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesFacade.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/SalesHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Backend/BrewUp.Sales.Rmq.Infrastructures/RabbitMq/RabbitMqHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BrewUp.AppHost/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Runtime/ExceptionServices/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.DependencyInjection/src/ServiceLookup/CallSiteFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.DependencyInjection/src/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -72,6 +87,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/621526284d3e4868b98948aff942206525763e57e194a27623b66c384466/ServiceProviderServiceExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8b3941da12e33bbbd3c947c3ecf16ad6e73a9ebef3f83ed2b886b46e2cd7322/ServiceCollectionHostedServiceExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8d42d5f1712377031e2892d1c29db5c23b8c7d49b9dc632fbf463bd930a8/RuntimeHelpers.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a2def1bc7dc89872f6da2526cb4b301cd3a3a1e93a82effbfa54fe4b170b21e/ModelName.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
@@ -82,23 +98,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.BrewUp.Sales.Rest: BrewUp.Rest.executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Launch Settings Profile.BrewUp.Sales.executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Launch Settings Profile.BrewUpAspire.AppHost: https.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;WithAspireAndMuflone&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.BrewUp.AppHost: https.executor": "Debug",
+    ".NET Launch Settings Profile.BrewUp.Sales.Rest: BrewUp.Rest.executor": "Debug",
+    ".NET Launch Settings Profile.BrewUp.Sales.executor": "Debug",
+    ".NET Launch Settings Profile.BrewUpAspire.AppHost: https.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "WithAspireAndMuflone",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BrewUp.Sales.Rest: BrewUp.Rest">
     <configuration name="BrewUpAspire.AppHost: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile" temporary="true">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BrewUpAspire.AppHost/BrewUpAspire.AppHost.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="BrewUp.AppHost: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile" temporary="true">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BrewUp.AppHost/BrewUp.AppHost.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -159,6 +191,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue=".NET Launch Settings Profile.BrewUp.AppHost: https" />
         <item itemvalue=".NET Launch Settings Profile.BrewUpAspire.AppHost: https" />
         <item itemvalue=".NET Launch Settings Profile.BrewUp.Sales" />
       </list>
@@ -184,6 +217,7 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -191,14 +225,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.Facade/Endpoints/SalesEndpoints.cs</url>
           <line>35</line>
-          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.Facade\Endpoints\SalesEndpoints.cs" containingFunctionPresentation="Method 'HandleCreateOrder'">
-            <startOffsets>
-              <option value="1135" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1209" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.Facade\Endpoints\SalesEndpoints.cs" containingFunctionPresentation="Method 'HandleCreateOrder'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
@@ -241,19 +268,6 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/Services/SalesOrderService.cs</url>
-          <line>15</line>
-          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.ReadModel\Services\SalesOrderService.cs" containingFunctionPresentation="Method 'CreateSalesOrderAsync'">
-            <startOffsets>
-              <option value="637" />
-            </startOffsets>
-            <endOffsets>
-              <option value="663" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.Rest/Modules/InfrastructureModule.cs</url>
           <line>21</line>
           <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.Rest\Modules\InfrastructureModule.cs" containingFunctionPresentation="Method 'RegisterModule'">
@@ -265,6 +279,45 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/CommandHandlers/CreateSalesOrderCommandHandlerAsync.cs</url>
+          <line>12</line>
+          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.Domain\CommandHandlers\CreateSalesOrderCommandHandlerAsync.cs" containingFunctionPresentation="Method 'ProcessCommand'">
+            <startOffsets>
+              <option value="506" />
+            </startOffsets>
+            <endOffsets>
+              <option value="686" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.Domain/CommandHandlers/CloseSalesOrderCommandHandlerAsync.cs</url>
+          <line>12</line>
+          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.Domain\CommandHandlers\CloseSalesOrderCommandHandlerAsync.cs" containingFunctionPresentation="Method 'ProcessCommand'">
+            <startOffsets>
+              <option value="496" />
+            </startOffsets>
+            <endOffsets>
+              <option value="594" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Backend/BrewUp.Sales.ReadModel/EventHandlers/SalesOrderClosedEventHandlerAsync.cs</url>
+          <line>15</line>
+          <properties documentPath="C:\Sviluppo\Ace68\BrewUpAspire\Backend\BrewUp.Sales.ReadModel\EventHandlers\SalesOrderClosedEventHandlerAsync.cs" containingFunctionPresentation="Method 'HandleAsync'">
+            <startOffsets>
+              <option value="510" />
+            </startOffsets>
+            <endOffsets>
+              <option value="595" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

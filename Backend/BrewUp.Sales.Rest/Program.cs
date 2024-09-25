@@ -2,7 +2,7 @@ using BrewUp.Sales.Rest.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// builder.Services.AddServiceDefaults();
+builder.AddServiceDefaults();
 
 // Register Modules
 builder.RegisterModules();

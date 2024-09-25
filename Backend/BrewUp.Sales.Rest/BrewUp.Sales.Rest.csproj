@@ -23,6 +23,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\BrewUp.Infrastructures\BrewUp.Infrastructures.csproj" />
+        <ProjectReference Include="..\..\BrewUp.ServiceDefaults\BrewUp.ServiceDefaults.csproj" />
         <ProjectReference Include="..\BrewUp.Sales.Azure.Infrastructures\BrewUp.Sales.Azure.Infrastructures.csproj" />
         <ProjectReference Include="..\BrewUp.Sales.Rmq.Infrastructures\BrewUp.Sales.Rmq.Infrastructures.csproj" />
     </ItemGroup>

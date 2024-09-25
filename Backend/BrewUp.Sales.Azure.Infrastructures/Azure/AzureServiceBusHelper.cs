@@ -35,7 +35,13 @@ public static class AzureServiceBusHelper
 				azureServiceBusConfiguration,
 				loggerFactory),
 			new SalesOrderCreatedConsumer(serviceProvider.GetRequiredService<ISalesOrderService>(),
-				azureServiceBusConfiguration, loggerFactory)
+				azureServiceBusConfiguration, loggerFactory),
+			
+			// new CloseSalesOrderConsumer(repository,
+			// 	azureServiceBusConfiguration,
+			// 	loggerFactory),
+			// new SalesOrderClosedConsumer(serviceProvider.GetRequiredService<ISalesOrderService>(),
+			// 	azureServiceBusConfiguration, loggerFactory)
 		});
 		services.AddMufloneRabbitMQConsumers(consumers);
 

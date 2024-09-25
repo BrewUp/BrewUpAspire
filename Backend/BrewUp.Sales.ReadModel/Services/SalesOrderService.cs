@@ -11,14 +11,11 @@ public sealed class SalesOrderService(ILoggerFactory loggerFactory) : ServiceBas
     public Task CreateSalesOrderAsync(SalesOrderId salesOrderId, SalesOrderNumber salesOrderNumber, CustomerId customerId,
         CustomerName customerName, OrderDate orderDate, IEnumerable<SalesOrderRowDto> rows, CancellationToken cancellationToken)
     {
-        try
-        {
-            return Task.CompletedTask;
-        }
-        catch (Exception ex)
-        {
-            Logger.LogError(ex, "Error creating sales order");
-            throw;
-        }
+        return Task.CompletedTask;
+    }
+
+    public Task CloseSalesOrderAsync(SalesOrderId salesOrderId, CancellationToken cancellationToken)
+    {
+        return Task.CompletedTask;
     }
 }

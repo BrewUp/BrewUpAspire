@@ -38,6 +38,9 @@ public sealed class SalesModule : IModule
             .Produces(StatusCodes.Status201Created)
             .WithName("CreateSalesOrder");
         
+        group.MapPut("/", HandleCloseOrder)
+            .WithName("CloseSalesOrder");
+        
         return endpoints;
     }
     
@@ -65,6 +68,18 @@ public sealed class SalesModule : IModule
                 new Price(10, "EUR"))));
 
         await serviceBus.SendAsync(createSalesOrder, cancellationToken);
+
+        return Results.Created($"/sales/{body.OrderId}", body.OrderId);
+    }
+    
+    private static async Task<IResult> HandleCloseOrder(
+        SalesOrderJson body,
+        IServiceBus serviceBus,
+        CancellationToken cancellationToken)
+    {
+        CloseSalesOrder closeSalesOrder = new(new SalesOrderId(body.OrderId));
+
+        await serviceBus.SendAsync(closeSalesOrder, cancellationToken);
 
         return Results.Created($"/sales/{body.OrderId}", body.OrderId);
     }

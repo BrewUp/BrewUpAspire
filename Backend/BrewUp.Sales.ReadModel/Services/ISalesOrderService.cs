@@ -9,4 +9,6 @@ public interface ISalesOrderService
 {
     Task CreateSalesOrderAsync(SalesOrderId salesOrderId, SalesOrderNumber salesOrderNumber, CustomerId customerId,
         CustomerName customerName, OrderDate orderDate, IEnumerable<SalesOrderRowDto> rows, CancellationToken cancellationToken);
+    
+    Task CloseSalesOrderAsync(SalesOrderId salesOrderId, CancellationToken cancellationToken);
 }
