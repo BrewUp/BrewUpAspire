@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewUp.Infrastructures", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewUp.Sales.Azure.Infrastructures", "Backend\BrewUp.Sales.Azure.Infrastructures\BrewUp.Sales.Azure.Infrastructures.csproj", "{6EC17FB9-F871-425B-A5FC-1944DFD770D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewUp.AppHost", "BrewUp.AppHost\BrewUp.AppHost.csproj", "{4EDD105F-29E0-479B-9102-AE32860EA07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewUp.ServiceDefaults", "BrewUp.ServiceDefaults\BrewUp.ServiceDefaults.csproj", "{C070BE54-1488-4F83-91CB-D99236690614}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +95,14 @@ Global
 		{6EC17FB9-F871-425B-A5FC-1944DFD770D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EC17FB9-F871-425B-A5FC-1944DFD770D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EC17FB9-F871-425B-A5FC-1944DFD770D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EDD105F-29E0-479B-9102-AE32860EA07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EDD105F-29E0-479B-9102-AE32860EA07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EDD105F-29E0-479B-9102-AE32860EA07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EDD105F-29E0-479B-9102-AE32860EA07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C070BE54-1488-4F83-91CB-D99236690614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C070BE54-1488-4F83-91CB-D99236690614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C070BE54-1488-4F83-91CB-D99236690614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C070BE54-1488-4F83-91CB-D99236690614}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
